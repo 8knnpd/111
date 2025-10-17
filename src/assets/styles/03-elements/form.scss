@@ -38,15 +38,28 @@ textarea.form-input {
 }
 
 input[type="text"],
-input[type="email"],
 input[type="password"],
-input[type="tel"],
-input[type="number"],
+input[type="email"],
 input[type="search"],
 input[type="url"],
+input[type="tel"],
+input[type="number"],
 textarea,
 select {
-  font-size: 16px !important;
+  @apply rounded-xl border-2 border-gray-200 h-[48px] text-gray-900 transition-all duration-300 placeholder-gray-400 !important;
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.05);
+  
+  &:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1), 0 4px 12px rgba(99, 102, 241, 0.15);
+    background: #ffffff;
+    transform: translateY(-1px);
+  }
+  
+  &:hover:not(:focus) {
+    border-color: rgba(99, 102, 241, 0.3);
+  }
 }
 
 @media screen and (max-width: 768px) {
