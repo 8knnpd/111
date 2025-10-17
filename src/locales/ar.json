@@ -1,0 +1,44 @@
+{
+  "blocks": {
+    "header": {
+      "cart": "السلة",
+      "show_more": "عرض المزيد"
+    },
+    "appBanner": {
+      "download_now": "حمله الان"
+    },
+    "announcement": {
+      "text": "موقع تجريبي - تصميم ثيم عز الفاخر"
+    }
+  },
+  "pages": {
+    "cart": {
+      "cart_options": "خيارات السلة"
+    },
+    "order": {
+      "can_edit_or_delete_your_review_within": "يمكنك تعديل أو حذف تقييمك خلال",
+      "edit_period_ended": "تم انتهاء المدة المحددة لتعديل التقييم",
+      "delete_period_ended": "تم انتهاء المدة المحددة لحذف التقييم",
+      "days_since_added": "أيام من إضافته",
+      "option_name": "الخيار",
+      "option_content": "المحتوى"
+    }
+  },
+  "common": {
+    "bank_offer_sub_title_multiple": "ادفع قيمة مشترياتك عبر أحد البطاقات البنكة التالية واحصل على الخصم المحدد",
+    "bank_offer_sub_title_single": "ادفع قيمة مشترياتك عبر أحد بطاقات بنك :bank_name واحصل على خصم بنسبة ",
+    "brand_name": "متجر عز للعطور الفاخرة",
+    "shop_now": "ابدأ التسوق الآن",
+    "close": "إغلاق",
+    "search_placeholder": "ابحث عن عطر، ماركة أو فئة...",
+    "categories": "الفئات",
+    "products": "المنتجات",
+    "view_all": "عرض الكل",
+    "add_to_cart": "إضافة للسلة",
+    "add_to_wishlist": "إضافة للمفضلة",
+    "out_of_stock": "نفذت الكمية",
+    "in_stock": "متوفر",
+    "free_shipping": "شحن مجاني",
+    "discount": "خصم"
+  }
+}

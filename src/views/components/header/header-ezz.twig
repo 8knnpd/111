@@ -1,0 +1,76 @@
+{#
+| Variable         | Type    | Description                     |
+|------------------|---------|---------------------------------|
+| cart             | object  |                                 |
+| cart.items_count | int     |                                 |
+| cart.total       | string  | Formatted total ex: "١٠٠ ر.س"   |
+#}
+
+{# Announcement Banner #}
+<div class="announcement-banner" id="announcementBanner">
+    <button class="announcement-close" id="closeAnnouncement" aria-label="{{ trans('common.close') }}">×</button>
+    <div class="announcement-content">
+        <div class="announcement-text">
+            <span>{{ trans('blocks.announcement.text') }}</span>
+            <span>{{ trans('blocks.announcement.text') }}</span>
+            <span>{{ trans('blocks.announcement.text') }}</span>
+        </div>
+    </div>
+</div>
+
+{# Main Navigation - Ezz Style #}
+<nav class="navbar ezz-navbar" id="navbar">
+    <div class="container">
+        <div class="nav-top">
+            {# Logo #}
+            <div class="logo">
+                <a href="{{ store.url }}">
+                    {% if store.logo %}
+                        <img src="{{ store.logo }}" alt="{{ store.name }}" class="logo-img">
+                    {% else %}
+                        <span class="logo-arabic">{{ store.name }}</span>
+                    {% endif %}
+                </a>
+            </div>
+
+            {# Mobile Menu Toggle #}
+            <button class="menu-toggle-btn" aria-label="{{ trans('blocks.header.show_more') }}">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            {# Search Bar #}
+            <div class="search-bar">
+                <salla-search width="100%" height="44"></salla-search>
+            </div>
+
+            {# Nav Icons #}
+            <div class="nav-icons">
+                {# Wishlist #}
+                <a href="{{ link('customer.wishlist') }}" class="icon-btn">
+                    <i class="far fa-heart"></i>
+                    <span class="badge"></span>
+                </a>
+                
+                {# Cart #}
+                <salla-cart-summary class="icon-btn cart-btn">
+                    <i slot="icon" class="fas fa-shopping-bag"></i>
+                    <span slot="count" class="cart-count">{{ cart.items_count > 0 ? cart.items_count : '' }}</span>
+                </salla-cart-summary>
+            </div>
+        </div>
+
+        {# Nav Menu #}
+        <div class="nav-menu">
+            <salla-menu class="desktop-menu" source="header"></salla-menu>
+        </div>
+    </div>
+</nav>
+
+{# Mobile Overlay #}
+<div class="mobile-overlay"></div>
+
+{# Modals #}
+<salla-login-modal></salla-login-modal>
+{% if store.settings.is_multilingual or store.settings.currencies_enabled %}
+    <salla-localization-modal></salla-localization-modal>
+{% endif %}

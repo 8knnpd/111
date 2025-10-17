@@ -1,0 +1,44 @@
+{
+  "blocks": {
+    "header": {
+      "cart": "Cart",
+      "show_more": "Show More"
+    },
+    "appBanner": {
+      "download_now": "download now"
+    },
+    "announcement": {
+      "text": "Demo Site - Ezz Luxury Theme Design"
+    }
+  },
+  "pages": {
+    "cart": {
+      "cart_options": "Cart Options"
+    },
+    "order": {
+      "can_edit_or_delete_your_review_within": "You can edit or delete your review within",
+      "edit_period_ended": "The period to edit the review has ended",
+      "delete_period_ended": "The period to delete the review has ended",
+      "days_since_added": "days since it was added",
+      "option_name": "Option name",
+      "option_content": "Content"
+    }
+  },
+  "common": {
+    "bank_offer_sub_title_multiple": "Pay for your purchases via one of the following bank cards and get the specified discount",
+    "bank_offer_sub_title_single": "Pay for your purchases via :bank_name bank card and get discount",
+    "brand_name": "Ezz Luxury Perfume Store",
+    "shop_now": "Shop Now",
+    "close": "Close",
+    "search_placeholder": "Search for perfume, brand or category...",
+    "categories": "Categories",
+    "products": "Products",
+    "view_all": "View All",
+    "add_to_cart": "Add to Cart",
+    "add_to_wishlist": "Add to Wishlist",
+    "out_of_stock": "Out of Stock",
+    "in_stock": "In Stock",
+    "free_shipping": "Free Shipping",
+    "discount": "Discount"
+  }
+}

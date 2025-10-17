@@ -1,0 +1,34 @@
+{#
+| Variable                       | Type     | Description                                                                  |
+|--------------------------------|----------|------------------------------------------------------------------------------|
+| component                      | object   | Contains merchant settings for fields from twilight.json `component` section |
+| component.title                | string   | Section title                                                                |
+| component.source_type          | string   | Source type: latest, best_selling, custom                                    |
+| component.products             | array    | Array of product IDs (when source_type is custom)                           |
+| component.products_count       | int      | Number of products to show                                                   |
+| position                       | int      | Sorting number start from zero                                               |
+#}
+<section class="ezz-premium-products s-block main-content">
+    <div class="container">
+        {% if component.title %}
+            <div class="products-header">
+                <h1 class="page-title">{{ component.title }}</h1>
+            </div>
+        {% endif %}
+
+        <div class="products-grid" id="ezz-products-{{ position }}">
+            {% set source = component.source_type == 'custom' ? 'selected' : component.source_type %}
+            {% set source_value = component.source_type == 'custom' ? component.products : null %}
+            {% set limit = component.products_count|default(16) %}
+            
+            <salla-products-list 
+                source="{{ source }}"
+                {% if source_value %}
+                source-value="{{ source_value|json_encode }}"
+                {% endif %}
+                limit="{{ limit }}"
+                display-type="grid">
+            </salla-products-list>
+        </div>
+    </div>
+</section>

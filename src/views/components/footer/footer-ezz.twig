@@ -1,0 +1,70 @@
+{#
+| Variable         | Type    | Description                     |
+|------------------|---------|---------------------------------|
+| store            | object  | Store information               |
+#}
+
+<footer class="footer ezz-footer">
+    <div class="container">
+        <div class="footer-content">
+            {# Store Information #}
+            <div class="footer-section">
+                <div class="footer-logo">
+                    {% if store.logo %}
+                        <img src="{{ store.logo }}" alt="{{ store.name }}" class="logo-img-footer">
+                    {% else %}
+                        <span class="logo-arabic">{{ store.name }}</span>
+                    {% endif %}
+                </div>
+                <p>{{ store.description|default(trans('common.brand_name')) }}</p>
+                
+                {# Social Links #}
+                <salla-social class="footer-social"></salla-social>
+            </div>
+
+            {# Quick Links #}
+            <div class="footer-section">
+                <h4>{{ trans('blocks.footer.about_us') }}</h4>
+                <salla-menu source="footer"></salla-menu>
+            </div>
+
+            {# Customer Service #}
+            <div class="footer-section">
+                <h4>{{ trans('blocks.footer.customer_service') }}</h4>
+                <ul class="footer-links">
+                    <li><a href="{{ link('customer.orders') }}">{{ trans('pages.orders.title') }}</a></li>
+                    <li><a href="{{ link('customer.wishlist') }}">{{ trans('pages.wishlist.title') }}</a></li>
+                    <li><a href="#">{{ trans('common.shipping') }}</a></li>
+                    <li><a href="#">{{ trans('common.returns') }}</a></li>
+                    <li><a href="#">{{ trans('common.faq') }}</a></li>
+                </ul>
+            </div>
+
+            {# Contact #}
+            <div class="footer-section">
+                <h4>{{ trans('blocks.footer.contact_us') }}</h4>
+                <salla-contacts class="footer-contacts"></salla-contacts>
+                
+                {# Payment Methods #}
+                <div class="payment-methods">
+                    <h5>{{ trans('blocks.footer.payment_methods') }}</h5>
+                    <salla-payments></salla-payments>
+                </div>
+            </div>
+        </div>
+
+        {# Footer Bottom #}
+        <div class="footer-bottom">
+            <p>
+                &copy; {{ "now"|date("Y") }} {{ store.name }}. 
+                {{ trans('blocks.footer.all_rights_reserved') }}
+            </p>
+            
+            {% if store.settings.tax_number %}
+                <p class="tax-number">
+                    {{ trans('blocks.footer.tax_number') }}: {{ store.settings.tax_number }}
+                </p>
+            {% endif %}
+        </div>
+    </div>
+</footer>

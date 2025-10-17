@@ -1,0 +1,42 @@
+{#
+| Variable                       | Type     | Description                                                                  |
+|--------------------------------|----------|------------------------------------------------------------------------------|
+| component                      | object   | Contains merchant settings for fields from twilight.json `component` section |
+| component.title                | string   | Hero title                                                                   |
+| component.highlight            | string   | Highlighted text                                                             |
+| component.description          | string   | Hero description                                                             |
+| component.background_image     | string   | Background image URL                                                         |
+| component.button_url           | string   | Button URL                                                                   |
+| position                       | int      | Sorting number start from zero                                               |
+#}
+<section class="ezz-luxury-hero s-block s-block--full-bg" id="hero-{{ position }}">
+    <div class="container">
+        <div class="hero">
+            <div class="hero-content">
+                <span class="hero-eyebrow">{{ trans('common.brand_name') }}</span>
+                {% if component.title %}
+                    <h1 class="hero-title">
+                        {{ component.title }}
+                        {% if component.highlight %}
+                            <br><span class="hero-highlight">{{ component.highlight }}</span>
+                        {% endif %}
+                    </h1>
+                {% endif %}
+                {% if component.description %}
+                    <p class="hero-description">{{ component.description }}</p>
+                {% endif %}
+                {% if component.button_url %}
+                    <a href="{{ component.button_url }}" class="hero-cta">
+                        {{ trans('common.shop_now') }}
+                    </a>
+                {% endif %}
+            </div>
+            <div class="hero-visual" 
+                 {% if component.background_image %}
+                 style="background-image: url('{{ component.background_image }}')"
+                 {% endif %}
+                 aria-hidden="true">
+            </div>
+        </div>
+    </div>
+</section>

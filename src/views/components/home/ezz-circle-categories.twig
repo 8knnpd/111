@@ -1,0 +1,28 @@
+{#
+| Variable                       | Type     | Description                                                                  |
+|--------------------------------|----------|------------------------------------------------------------------------------|
+| component                      | object   | Contains merchant settings for fields from twilight.json `component` section |
+| component.title                | string   | Section title                                                                |
+| component.categories           | array    | Array of category objects                                                    |
+| position                       | int      | Sorting number start from zero                                               |
+#}
+<section class="ezz-circle-categories s-block categories-section">
+    <div class="container">
+        {% if component.title %}
+            <h2 class="categories-title">{{ component.title }}</h2>
+        {% endif %}
+        
+        <div class="categories-scroll">
+            {% for category in component.categories %}
+                <a href="{{ category.url }}" class="category-item">
+                    <div class="category-circle">
+                        <img src="{{ category.image.url }}" 
+                             alt="{{ category.name }}"
+                             loading="lazy">
+                    </div>
+                    <span class="category-name">{{ category.name }}</span>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
