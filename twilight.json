@@ -1084,6 +1084,7 @@
                     "label": "صورة الخلفية",
                     "id": "background_image",
                     "format": "image",
+                    "required": false,
                     "description": "المقاس المناسب: 1600×900 بكسل",
                     "settings": {
                         "width": 1600,
