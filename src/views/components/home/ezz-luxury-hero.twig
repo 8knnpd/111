@@ -25,8 +25,8 @@
                 {% if component.description %}
                     <p class="hero-description">{{ component.description }}</p>
                 {% endif %}
-                {% if component.button_url %}
-                    <a href="{{ component.button_url }}" class="hero-cta">
+                {% if component.button_url and component.button_url.url %}
+                    <a href="{{ component.button_url.url }}" class="hero-cta">
                         {{ trans('common.shop_now') }}
                     </a>
                 {% endif %}

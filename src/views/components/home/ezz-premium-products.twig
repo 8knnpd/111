@@ -18,14 +18,12 @@
 
         <div class="products-grid" id="ezz-products-{{ position }}">
             {% set source = component.source_type == 'custom' ? 'selected' : component.source_type %}
-            {% set source_value = component.source_type == 'custom' ? component.products : null %}
+            {% set source_value = component.source_type == 'custom' ? component.products : [] %}
             {% set limit = component.products_count|default(16) %}
             
             <salla-products-list 
                 source="{{ source }}"
-                {% if source_value %}
                 source-value="{{ source_value|json_encode }}"
-                {% endif %}
                 limit="{{ limit }}"
                 display-type="grid">
             </salla-products-list>

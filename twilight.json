@@ -1148,11 +1148,11 @@
                     "format": "dropdown-list",
                     "selected": [],
                     "options": [],
-                    "required": true,
+                    "required": false,
                     "multichoice": true,
                     "searchable": true,
                     "source": "categories",
-                    "minLength": 3,
+                    "minLength": 1,
                     "maxLength": 12
                 }
             ]

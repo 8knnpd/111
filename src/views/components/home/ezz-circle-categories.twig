@@ -16,9 +16,10 @@
             {% for category in component.categories %}
                 <a href="{{ category.url }}" class="category-item">
                     <div class="category-circle">
-                        <img src="{{ category.image.url }}" 
+                        <img src="{{ category.image ? category.image : 'images/placeholder.png' | asset }}" 
                              alt="{{ category.name }}"
-                             loading="lazy">
+                             loading="lazy"
+                             class="{{ category.image ? '' : 'has-placeholder'}}">
                     </div>
                     <span class="category-name">{{ category.name }}</span>
                 </a>
