@@ -1214,10 +1214,11 @@
                     "format": "dropdown-list",
                     "selected": [],
                     "options": [],
+                    "required": false,
                     "multichoice": true,
                     "searchable": true,
                     "source": "products",
-                    "minLength": 4,
+                    "minLength": 1,
                     "maxLength": 20,
                     "hide_if": {
                         "source_type": ["latest", "best_selling"]
