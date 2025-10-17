@@ -45,46 +45,34 @@
     </div>
   </div>
 
-  {# Header Component - Ezz Theme #}
-  <!-- Announcement Banner -->
-  <div class="announcement-banner" id="announcementBanner">
-      <button class="announcement-close" id="closeAnnouncement" aria-label="{{ trans('common.close') }}">×</button>
-      <div class="announcement-content">
-          <div class="announcement-text">
-              <span>{{ trans('blocks.announcement.text') }}</span>
-              <span>{{ trans('blocks.announcement.text') }}</span>
-              <span>{{ trans('blocks.announcement.text') }}</span>
-          </div>
-      </div>
-  </div>
+  {# Main Header #}
+  <div class="main-header">
+    <div class="container">
+      <div class="flex items-center justify-between relative">
+        <div class="flex items-center flex-1">
+          <button class="header-btn mburger mburger--collapse  lg:hidden"  id="menu-btn" aria-label="Toggle menu">
+            <b></b>
+            <b></b>
+            <b></b>
+          </button>
 
-  <nav class="navbar ezz-navbar" id="navbar">
-      <div class="container">
-          <div class="nav-top">
-              {# Logo #}
-              <div class="logo">
-                  <a href="{{ store.url }}">
-                      {% if store.logo %}
-                          <img src="{{ store.logo }}" alt="{{ store.name }}" class="logo-img">
-                          {% endif %}
-                      </a>
-                      <custom-main-menu></custom-main-menu>
-                  </div>
-                  <div class="flex items-center justify-end">
-                      {% if user.type=='user' %}
-                        <salla-user-menu avatar-only show-header></salla-user-menu>
-                      {% else %}
-                          <button class="header-btn" aria-label="user-icon" onclick="salla.event.dispatch('login::open')">
-                            <i class="header-btn__icon sicon-user-circle"></i>
-                          </button>
-                      {% endif %}
-                      <salla-cart-summary class="ml-4 rtl:ml-[unset] rtl:mr-4">
-                        <i slot="icon" class="header-btn__icon icon sicon-shopping-bag"></i>
-                      </salla-cart-summary>
-                  </div>
-              </div>
-          </div>
+          {% component 'header.logo' %}
+          <custom-main-menu></custom-main-menu>
+        </div>
+        <div class="flex items-center justify-end">
+          {% if user.type=='user' %}
+            <salla-user-menu avatar-only show-header></salla-user-menu>
+          {% else %}
+            <button class="header-btn" aria-label="user-icon" onclick="salla.event.dispatch('login::open')">
+              <i class="header-btn__icon sicon-user-circle"></i>
+            </button>
+          {% endif %}
+          <salla-cart-summary class="ml-4 rtl:ml-[unset] rtl:mr-4">
+            <i slot="icon" class="header-btn__icon icon sicon-shopping-bag"></i>
+          </salla-cart-summary>
+        </div>
       </div>
+    </div>
   </div>
 </header>
 {% if store.scope %}
